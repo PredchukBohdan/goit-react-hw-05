@@ -1,0 +1,117 @@
+.movieList {
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.movieListItem {
+  background-color: #252627;
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc((100% - 15px) / 2);
+  position: relative;
+  transition: box-shadow 0.5s ease;
+}
+.movieListItem a {
+  padding-bottom: 20px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  overflow: hidden;
+}
+.movieListItem a:hover img {
+  transform: scale(1.1);
+}
+.movieListItem:hover {
+  box-shadow: 1px 1px 16px #000000a1;
+}
+.movieItemTitle {
+  padding: 0 10px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 500;
+}
+.movieListItem div {
+  aspect-ratio: 1 / 1.4;
+  overflow: hidden;
+}
+.movieListItem img {
+  aspect-ratio: 1 / 1.41;
+  transition: transform 0.5s ease;
+}
+.movieItemBadgeRed,
+.movieItemBadgeOrange,
+.movieItemBadgeYellow,
+.movieItemBadgeGreen {
+  min-width: 60px;
+  text-align: center;
+  position: absolute;
+  line-height: 1.2;
+  color: #000;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  max-width: calc(100% - 8px);
+  white-space: nowrap;
+  top: 14px;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+.movieItemBadgeRed {
+  background-color: #ca0707;
+}
+.movieItemBadgeOrange {
+  background-color: #ee5907;
+}
+.movieItemBadgeYellow {
+  background-color: #f3e511;
+}
+.movieItemBadgeGreen {
+  background-color: #0ac515;
+}
+@media (min-width: 600px) {
+  .movieItemTitle {
+    font-size: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .movieListItem {
+    width: calc((100% - 30px) / 3);
+  }
+}
+@media (min-width: 1024px) {
+  .movieListItem {
+    width: calc((100% - 45px) / 4);
+  }
+  .movieItemTitle {
+    font-size: 18px;
+  }
+  .movieItemBadgeRed,
+  .movieItemBadgeOrange,
+  .movieItemBadgeYellow,
+  .movieItemBadgeGreen {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1440px) {
+  .movieList {
+    column-gap: 20px;
+    row-gap: 25px;
+  }
+  .movieListItem {
+    width: calc((100% - 60px) / 4);
+  }
+  .movieItemTitle {
+    font-size: 22px;
+  }
+  .movieItemBadgeRed,
+  .movieItemBadgeOrange,
+  .movieItemBadgeYellow,
+  .movieItemBadgeGreen {
+    font-size: 18px;
+    top: 30px;
+  }
+}

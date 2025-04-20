@@ -1,0 +1,37 @@
+.movieListSection {
+  width: 100%;
+  padding: 20px 0;
+}
+.movieHeading {
+  color: #fff;
+  line-height: 1.1em;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.empty,
+.error {
+  text-align: center;
+  font-weight: 500;
+}
+.error {
+  color: #e90606;
+}
+@media (min-width: 768px) {
+  .movieHeading {
+    font-size: 28px;
+  }
+  .empty,
+  .error {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1440px) {
+  .movieHeading {
+    margin-bottom: 30px;
+    font-size: 32px;
+  }
+  .empty,
+  .error {
+    font-size: 22px;
+  }
+}
