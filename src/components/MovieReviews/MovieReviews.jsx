@@ -20,9 +20,11 @@ const MovieReviews = () => {
 
   useEffect(() => {
     const getMovies = async () => {
+      setLoading(true);
+      setError(false);
+      setEmpty(false);
+      setReviews([]);
       try {
-        setLoading(true);
-        setError(false);
         const data = await moviesData("reviews", 1, movieId);
 
         if (data.results.length === 0) {

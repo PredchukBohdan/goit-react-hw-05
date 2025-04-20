@@ -26,7 +26,6 @@ const MoviesPage = () => {
 
   const [value, setValue] = useState(initialQuery);
   const [currentPage, setCurrentPage] = useState(initialPage);
-  const [urlQuery, setUrlQuery] = useState(initialQuery);
 
   const updateSearchParams = (query, page) => {
     const updatedParams = new URLSearchParams();
@@ -66,7 +65,7 @@ const MoviesPage = () => {
       }
     };
     getMovies();
-  }, [currentPage, urlQuery]);
+  }, [currentPage, value]);
 
   const nextPage = () => {
     if (currentPage === totalPages) return;
@@ -82,14 +81,12 @@ const MoviesPage = () => {
 
     if (!query) {
       setValue("");
-      setUrlQuery("");
       setCurrentPage(1);
       setSearchParams(new URLSearchParams());
       return;
     }
 
     setValue(query);
-    setUrlQuery(query);
     setCurrentPage(1);
   };
   const handleChange = (e) => {
@@ -103,8 +100,7 @@ const MoviesPage = () => {
           name="query"
           type="text"
           placeholder="Search movies by title"
-          value={value}
-          onChange={handleChange}
+          defaultValue={value}
           className={s.input}
         />
         <button className={s.button} type="submit">
@@ -125,7 +121,7 @@ const MoviesPage = () => {
       {error && !loading && (
         <div className={s.error}>Server error. Please try again!!!</div>
       )}
-      {!error && !loading && movies.length === 0 && empty && urlQuery && (
+      {!error && !loading && movies.length === 0 && empty && value && (
         <div className={s.empty}>No movies found</div>
       )}
       {movies.length > 0 && !error && !loading && <MovieList movies={movies} />}

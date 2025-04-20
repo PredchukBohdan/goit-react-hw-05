@@ -21,9 +21,11 @@ const MovieCast = () => {
 
   useEffect(() => {
     const getMovies = async () => {
+      setLoading(true);
+      setError(false);
+      setEmpty(false);
+      setMoviesCast([]);
       try {
-        setLoading(true);
-        setError(false);
         const data = await moviesData("cast", 1, movieId);
         if (data.cast.length === 0) {
           setEmpty(true);
@@ -44,7 +46,7 @@ const MovieCast = () => {
     return () => {
       clearTimeout(timeout);
     };
-  }, []);
+  }, [movieId]);
 
   return (
     <div className={s.cast}>

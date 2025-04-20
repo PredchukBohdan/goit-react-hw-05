@@ -41,7 +41,7 @@ const MovieDetailsPage = () => {
       }
     };
     getMovies();
-  }, []);
+  }, [movieId]);
 
   const {
     poster_path,
